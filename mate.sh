@@ -30,7 +30,7 @@ yum -y remove --remove-leaves totem rhythmbox || exit 6
 #サウンド出力用
 #サウンドカード制御とミキサー
 echo "";echo `date`;echo "7[INSTALL_SOUND_SUPPORT]"
-yum -y install alsa-lib alsa-firmware alsa-tools alsa-utils pulseaudio pavucontrol || exit 7
+yum -y install alsa-lib alsa-firmware alsa-tools alsa-utils pulseaudio pavucontrol alsa-plugins-pulseaudio pulseaudio-utils|| exit 7
 #あとはpavucontrol(ミキサー)で適当に設定する。
 #pulseaudio経由でないと面倒。ALSA直接だとfirefoxから音が出なかったりする。
 
