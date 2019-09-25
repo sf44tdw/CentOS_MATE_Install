@@ -12,7 +12,11 @@ echo "";echo `date`;echo "1[UPDATE]"
 yum -y update || exit 1
 
 echo "";echo `date`;echo "2[INSTALL YUM REMOVE PLUGIN]"
+
+VERSION_CENTOS=$(rpm -E %centos)
+if [ ${VERSION_CENTOS} -lt 8 ]; then
 yum -y install yum-plugin-remove-with-leaves || exit 2
+fi
 
 echo "";echo `date`;echo "3[INSTALL EPEL]"
 yum -y install epel-release || exit 3
